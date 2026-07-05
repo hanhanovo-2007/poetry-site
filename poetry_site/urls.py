@@ -24,3 +24,9 @@ urlpatterns = [
     path('api/', include('poetry.urls')),
     path('api/', include('users.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+from django.urls import re_path
+from django.views.generic import TemplateView
+urlpatterns += [
+    # Vue 前端 - 捕获所有非 API/Admin 路由
+    re_path(r"^(?!api/|admin/).*$", TemplateView.as_view(template_name="index.html")),
+]

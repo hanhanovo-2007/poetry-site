@@ -46,3 +46,6 @@ tunnel_*.txt
 ngrok_url.txt
 cf_tunnel.txt
 *.log
+
+# Static files
+staticfiles/

@@ -1,0 +1,11 @@
+﻿[phases.setup]
+nixPkgs = ["python3", "python3.pkgs.pip", "python3.pkgs.setuptools"]
+
+[phases.install]
+cmds = ["pip install -r requirements.txt"]
+
+[phases.build]
+cmds = ["python manage.py collectstatic --noinput --clear"]
+
+[start]
+cmd = "gunicorn poetry_site.wsgi --log-file - --workers 4 --timeout 120"
