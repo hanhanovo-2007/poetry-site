@@ -7,18 +7,9 @@ export default defineConfig({
     port: 5173,
     allowedHosts: true,
     proxy: {
-      '/api': {
-        target: 'http://localhost:8000',
-        changeOrigin: true,
-      },
-      '/admin': {
-        target: 'http://localhost:8000',
-        changeOrigin: true,
-      },
-      '/static': {
-        target: 'http://localhost:8000',
-        changeOrigin: true,
-      },
+      '/api': { target: 'http://localhost:8000', changeOrigin: true },
+      '/admin': { target: 'http://localhost:8000', changeOrigin: true },
+      '/static': { target: 'http://localhost:8000', changeOrigin: true },
     },
   },
 })
