@@ -1,0 +1,5 @@
+﻿django>=6.0
+django-simpleui
+Pillow
+gunicorn
+whitenoise
